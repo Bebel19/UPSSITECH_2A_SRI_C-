@@ -1,10 +1,12 @@
 //
-// Created by othma on 23/11/2024.
+// Created by othman on 23/11/2024.
 //
 
 #include "Document.h"
 #include <iostream>
 #include "Livre.h"
+#include "Article.h"
+
 using namespace std;
 
 int main() {
@@ -43,6 +45,24 @@ int main() {
     cout << "Affichage du Livre 2 (copie de Livre 1):" << endl;
     livre2.afficher();
     cout << endl;
+
+    //Test de la classe Article
+    // Creation d'un article
+    Article article1("Titre de l'article", "Auteur de l'article", "Resume de l'article",
+                     "Editeur", 42, "Revue scientifique");
+
+    // Affichage des informations de l'article
+    cout << "Affichage de l'Article 1:" << endl;
+    article1.afficher();
+    cout << endl;
+
+    // Test du constructeur par copie (herite de Document)
+    Article article2 = article1;
+
+    cout << "Affichage de l'Article 2 (copie de Article 1):" << endl;
+    article2.afficher();
+    cout << endl;
+
 
     return 0;
 }

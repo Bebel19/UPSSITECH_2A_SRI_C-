@@ -1,34 +1,30 @@
 //
-// Created by othma on 23/11/2024.
+// Created by othman on 23/11/2024.
 //
 
 #ifndef LIVRE_H
 #define LIVRE_H
 
 #include "Document.h"
+#include <string>
+#include <iostream>
+using namespace std;
 
 class Livre : public Document {
-    private:
-      string editor;
-      int publishingYear;
+private:
+    string editor;         // Editeur du livre
+    int publishingYear;    // Annee de publication
 
-    public:
-      Livre(const string & name, const string & author, const string & summary, const string & editor, const int publishingYear)
-          : Document(name, author, summary), editor(editor), publishingYear(publishingYear) {}
+public:
+    // Constructeur avec paramètres
+    Livre(const string& name, const string& author, const string& summary,
+          const string& editor, int publishingYear);
 
-    //Methode d'affichage spécifique aux livres
-    void afficher() const {
-       Document::afficher();
-       cout << "Editeur : " << editor << endl;
-       cout << "Annee de publication : " << publishingYear << endl;
-       }
+    // Méthode d'affichage spécifique aux livres
+    void afficher() const override;
 
     // Destructeur
-    ~Livre() {
-         cout << "Livre " << getName() << " publie en " << publishingYear << " detruit." <<endl;
-         }
+    ~Livre();
 };
 
-
-
-#endif //LIVRE_H
+#endif // LIVRE_H
